@@ -1,11 +1,12 @@
 import React, { useReducer } from "react";
 
+// we use the useReducer hook when we try to deal with complex states. 
 const reducer = (state, action) => {
   switch (action.type) {
     case "INCREMENT":
-      return { count: state.count + 1, showText: state.showText };
+      return { ...state, count: state.count + 1};
     case "toggleShowText":
-      return { count: state.count, showText: !state.showText };
+      return { ...state, showText: !state.showText };
     default:
       return state;
   }
